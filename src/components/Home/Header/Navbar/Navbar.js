@@ -5,10 +5,10 @@ import logo from '../../../../images/logos/logo.png';
 
 const Navbar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light ">
-                <NavLink to="/home">
-                    <img className="nav-logo ml-5" src={logo} alt=""/>
-                </NavLink>
+        <nav class="navbar navbar-expand-lg  navbar-expand-md  navbar-expand-sm  navbar-expand-xl navbar-light ">
+            <NavLink to="/home">
+                <img className="nav-logo ml-5" src={logo} alt="" />
+            </NavLink>
 
             <div class="collapse navbar-collapse mr-5" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
@@ -20,7 +20,7 @@ const Navbar = () => {
                                 paddingBottom: '0px',
                                 borderBottom: '3px solid #7AB259',
                                 textDecoration: 'none',
-                                color:'#111430'
+                                color: '#111430'
                             }}>
                             Home
                         </NavLink>
@@ -33,7 +33,7 @@ const Navbar = () => {
                                 paddingBottom: '0px',
                                 borderBottom: '3px solid #7AB259',
                                 textDecoration: 'none',
-                                color:'#111430'
+                                color: '#111430'
                             }}>
                             Our portfolio
                         </NavLink>
@@ -46,7 +46,7 @@ const Navbar = () => {
                                 paddingBottom: '0px',
                                 borderBottom: '3px solid #7AB259',
                                 textDecoration: 'none',
-                                color:'#111430'
+                                color: '#111430'
                             }}>
                             Our Team
                         </NavLink>
@@ -59,9 +59,9 @@ const Navbar = () => {
                                 paddingBottom: '0px',
                                 borderBottom: '3px solid #7AB259',
                                 textDecoration: 'none',
-                                color:'#111430'
+                                color: '#111430'
                             }}>
-                         Contact Us
+                            Contact Us
                         </NavLink>
                     </li>
                     <li>
