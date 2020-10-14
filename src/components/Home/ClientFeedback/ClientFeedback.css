@@ -1,0 +1,23 @@
+.profession{
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+}
+.feedback-area{
+    border:1px solid lightgrey;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.name-area{
+    position: absolute;
+    left: 0px;
+    top:0px;
+}
+.comment-area{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
