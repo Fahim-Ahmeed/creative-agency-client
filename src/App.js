@@ -18,8 +18,10 @@ import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import AdminServiceList from './components/Admin/AdminServiceList/AdminServiceList';
 
 export const UserContext = createContext()
+export const ServiceContext=createContext()
 
 function App() {
+  const[selectService,setSelectservice]=useState();
   const [user, setUser] = useState({
     name:'',
     email:'',
@@ -29,6 +31,7 @@ function App() {
   
   return (
 <UserContext.Provider value={[user, setUser]}>
+<ServiceContext.Provider value={[selectService,setSelectservice]}>
     <Router>
       <Switch>
         <Route path="/home">
@@ -63,6 +66,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </ServiceContext.Provider>
     </UserContext.Provider>
   );
 }
