@@ -16,16 +16,16 @@ const ClientFeedback = () => {
                 <section className="row w-75">
                     {
                         feedbacks.map(feedback => <div className="col-md-4 feedback  " key={feedback._id}>
-                           <div className="feedback-area">
-                           <div className="d-flex justify-content-center name-area ">
-                                <img src={feedback.image} className="img-fluid d-flex justify-content-center service-image mr-2 " alt="" />
-                                <h4>{feedback.name} <br /> <span className="profession">{feedback.profession}</span> </h4>
-                            </div>
-                        
+                            <div className="feedback-area">
+                                <div className="d-flex justify-content-center name-area ">
+                                    <img src={feedback.image} className="img-fluid d-flex justify-content-center service-image mr-2 " alt="" />
+                                    <h4>{feedback.name} <br /> <span className="profession">{feedback.profession}</span> </h4>
+                                </div>
+
                                 <p className="comment-area">{feedback.comment}</p>
-                           </div>
-                            
-                            </div>)
+                            </div>
+
+                        </div>)
                     }
                 </section>
             </div>

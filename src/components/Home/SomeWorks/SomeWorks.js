@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './SomeWorks.css';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
@@ -9,15 +9,7 @@ import carousel4 from '../../../images/carousel-4.png'
 import carousel5 from '../../../images/carousel-5.png'
 
 const SomeWorks = () => {
-  const [someWorks, setSomeWorks] = useState([])
-  useEffect(() => {
-    fetch('http://localhost:5000/someWorks')
-      .then(response => response.json())
-      .then(data => setSomeWorks(data))
-  }, [])
-
-
-  console.log(someWorks.image);
+ 
 
 
   return (
@@ -30,10 +22,7 @@ const SomeWorks = () => {
         margin={20}
         dots
       >
-        {/* {
-                    someWorks.map(work=><div><img src={work.image} alt="" /></div>)
-                   
-                  } */}
+        
         <div><img src={carousel1} alt="" /></div>
         <div><img src={carousel5} alt="" /></div>
         <div><img src={carousel2} alt="" /></div>

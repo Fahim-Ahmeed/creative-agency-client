@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react';
 import './Companies.css';
-import airbnb from'../../../images/logos/airbnb.png';
-import google from '../../../images/logos/google.png';
-import netflix from '../../../images/logos/netflix.png';
-import slack from '../../../images/logos/slack.png';
-import uber from '../../../images/logos/uber.png';
 import { useState } from 'react';
 
 const Companies = () => {

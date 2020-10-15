@@ -1,5 +1,4 @@
 import React from 'react';
-import Feedback from 'react-bootstrap/esm/Feedback';
 import ClientFeedback from './ClientFeedback/ClientFeedback';
 import Companies from './Companies/Companies';
 import Footer from './Footer/Footer';
@@ -14,7 +13,7 @@ const Home = () => {
             <Companies></Companies>
             <Services></Services>
            <SomeWorks></SomeWorks>
-       <ClientFeedback></ClientFeedback>
+           <ClientFeedback></ClientFeedback>
            <Footer></Footer>
         </div>
     );

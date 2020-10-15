@@ -1,0 +1,7 @@
+.sideNav {
+    height: 95vh;
+}
+
+.sideNav li, .sidebar img {
+    cursor: pointer;
+}

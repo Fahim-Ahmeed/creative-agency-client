@@ -1,10 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../../../../images/logos/logo.png';
-import { Container, Form, FormControl, Nav, NavDropdown, Button, Navbar } from 'react-bootstrap';
+import { Container, Nav,  Navbar } from 'react-bootstrap';
 
 const Navigation = () => {
+  // const history=useHistory()
+  // const handleToLogin=()=>{
+  //   history.push('/dekha')
+  // }
   return (
     <Container>
       <Navbar bg="" expand="lg">
@@ -38,7 +42,7 @@ const Navigation = () => {
               }}>
               Our portfolio
                         </NavLink>
-            <NavLink to="/team"
+            <NavLink to="/member"
               className="nav-link mr-4"
               activeStyle={{
                 fontWeight: "bold",
@@ -60,8 +64,8 @@ const Navigation = () => {
               }}>
               Contact Us
                         </NavLink>
-            <NavLink to="/login">
-            <button className="btn btn-dark " >Login</button>
+            <NavLink to="/mainDashboard">
+            <button className="btn btn-dark ">Login</button>
 
             </NavLink>
 
