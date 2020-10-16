@@ -33,7 +33,7 @@ const Services = () => {
             <section className="row w-75">
                 {
                     services.map(service => <div onClick={() => { handleService(service) }} className="col-md-4 service p-5" key={service._id}>
-                        <img src={service.image} className="img-fluid d-flex justify-content-center service-image " alt="" />
+                        <img src={`data:image/png;base64,${service.image.img}`} className="img-fluid d-flex justify-content-center service-image " alt="" />
                        <div style={{margin:'auto',textAlign:'center'}}>
                        <h5 >{service.name}</h5>
                         <p >{service.description}</p>

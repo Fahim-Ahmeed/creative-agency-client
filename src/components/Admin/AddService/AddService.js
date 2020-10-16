@@ -12,18 +12,19 @@ const AddService = () => {
     const { register, handleSubmit } = useForm()
     const onSubmit = data => {
         const formData = new FormData()
-        // formData.append('file', file)
-        // formData.append('title', data.title)
-        // formData.append('description', data.description)
+        formData.append('file', file)
+        formData.append('name', data.name)
+        formData.append('description', data.description)
 
-        // fetch('http://localhost:5000/addService', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         console.log(result)
-        //     })
+        fetch('http://localhost:5000/addService', {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result)
+                alert('service added successfully')
+            })
     }
     return (
         <section className='ClientDashboard'>
@@ -36,7 +37,7 @@ const AddService = () => {
                             <div className="service-form row p-4">
                                 <div className="col-md-6">
                                     <p className='m-0'>Service Title</p>
-                                    <input required ref={register} className='form-control mb-4' name='title' type="text" />
+                                    <input required ref={register} className='form-control mb-4' name='name' type="text" />
                                     <p className='m-0'>Description</p>
                                     <textarea required ref={register} className='form-control' name="description" id="" cols="30" rows="5"></textarea>
                                 </div>
