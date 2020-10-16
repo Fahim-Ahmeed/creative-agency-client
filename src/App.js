@@ -21,7 +21,7 @@ export const UserContext = createContext()
 export const ServiceContext=createContext()
 
 function App() {
-  const[selectService,setSelectservice]=useState();
+  const[selectService,setSelectservice]=useState({});
   const [user, setUser] = useState({
     name:'',
     email:'',

@@ -47,7 +47,7 @@ const ServiceList = () => {
                                 <div className="order-card p-4 mb-5">
                                     <div className="order-top d-flex justify-content-between align-items-start">
                                         <img width='74' src={`data:image/png;base64,${item.image.img}`} alt="" />
-                                        <button style={statusBtnStyles} className="btn">Pending</button>
+                            <button style={statusBtnStyles} className="btn">{item.status}</button>
                                     </div>
                                     <p className="order-title mt-3">{item.work}</p>
                                     <p style={{ color: 'rgba(0, 0, 0, 0.7)' }} className="text-secondary">{item.details}</p>

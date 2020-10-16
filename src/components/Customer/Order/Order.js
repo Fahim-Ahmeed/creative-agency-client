@@ -12,8 +12,10 @@ const Order = () => {
     const [selectService, setSelectservice] = useContext(ServiceContext)
     console.log(selectService)
     const { register, handleSubmit } = useForm()
+    
     const [file, setFile] = useState(null)
     const onSubmit = data => {
+        let status='pending'
         const formData = new FormData()
         formData.append('fileOne', file)
         formData.append('name', data.name)
@@ -22,6 +24,7 @@ const Order = () => {
         formData.append('details', data.details)
         // formData.append('fileTwo', selectService.sImage)
         formData.append('price', data.price)
+        formData.append('status', status)
 
         fetch('http://localhost:5000/addCustomer', {
             method: 'POST',

@@ -19,6 +19,7 @@ const Login = () => {
 
         firebase.auth().signInWithPopup(googleProvider)
             .then(result => {
+                console.log(result)
                 const { email, displayName, photoURL } = result.user;
                 fetch(`http://localhost:5000/findAdmin?email=${email}`)
                     .then(response => response.json())
@@ -57,7 +58,9 @@ const Login = () => {
                 console.log(errorMessage)
             });
     }
+    
     if(user.email){
+        console.log(user)
         sessionStorage.setItem('user', user.email)
         sessionStorage.setItem('admin',user.admin)
         history.replace(from)
