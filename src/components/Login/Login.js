@@ -21,7 +21,7 @@ const Login = () => {
             .then(result => {
                 console.log(result)
                 const { email, displayName, photoURL } = result.user;
-                fetch(`http://localhost:5000/findAdmin?email=${email}`)
+                fetch(`https://protected-stream-26581.herokuapp.com/findAdmin?email=${email}`)
                     .then(response => response.json())
                     .then(data => {
                         if (data[0]) {

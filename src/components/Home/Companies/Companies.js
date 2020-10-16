@@ -5,7 +5,7 @@ import { useState } from 'react';
 const Companies = () => {
     const[companies,setCompanies]=useState([])
    useEffect(()=>{
-       fetch('http://localhost:5000/allcompanies')
+       fetch('https://protected-stream-26581.herokuapp.com/allcompanies')
        .then(response => response.json())
        .then(data=>setCompanies(data))
    },[])

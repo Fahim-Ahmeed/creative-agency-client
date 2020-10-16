@@ -12,7 +12,7 @@ const Services = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allservices')
+        fetch('https://protected-stream-26581.herokuapp.com/allservices')
             .then(response => response.json())
             .then(data => setServices(data))
     }, [])

@@ -12,7 +12,7 @@ const AdminServiceList = () => {
     const [customers, setCustomers] = useState([])
     // let [status, setStatus] = useState('')
     const allCustomer = () => {
-        fetch('http://localhost:5000/allcustomer')
+        fetch('https://protected-stream-26581.herokuapp.com/allcustomer')
             .then(response => response.json())
             .then(data => {
                 if (data) {
@@ -29,7 +29,7 @@ const AdminServiceList = () => {
     const handleChange = (e, id) => {
        let updateStatus=e.target.value
         console.log('handleChange',updateStatus)
-        fetch(`http://localhost:5000/updateStatus/${id}`,{
+        fetch(`https://protected-stream-26581.herokuapp.com/updateStatus/${id}`,{
             method: 'PATCH',
             headers:{'Content-type': 'application/json'},
             body: JSON.stringify({updateStatus})

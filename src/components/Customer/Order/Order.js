@@ -26,7 +26,7 @@ const Order = () => {
         formData.append('price', data.price)
         formData.append('status', status)
 
-        fetch('http://localhost:5000/addCustomer', {
+        fetch('https://protected-stream-26581.herokuapp.com/addCustomer', {
             method: 'POST',
             body: formData
         })

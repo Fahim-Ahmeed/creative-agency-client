@@ -5,7 +5,7 @@ import './ClientFeedback.css';
 const ClientFeedback = () => {
     const [feedbacks, setFeedback] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/feedback')
+        fetch('https://protected-stream-26581.herokuapp.com/feedback')
             .then(response => response.json())
             .then(data => setFeedback(data))
     }, [])

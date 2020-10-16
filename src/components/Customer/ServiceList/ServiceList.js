@@ -12,7 +12,7 @@ const ServiceList = () => {
     const[user, setUser]=useContext(UserContext)
     const [totalItem, setTotalItem] = useState([])
     const yourOrder = () => {
-        fetch(`http://localhost:5000/findCustomer?email=${user.email}`, {
+        fetch(`https://protected-stream-26581.herokuapp.com/findCustomer?email=${user.email}`, {
             method: 'GET',
 
         })

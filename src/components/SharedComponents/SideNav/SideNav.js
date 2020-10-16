@@ -12,11 +12,6 @@ const SideNav = () => {
 
     const history = useHistory()
     const signOut=()=>{
-        // const removeUser={...user}
-        // removeUser.email='',
-        // removeUser.name='',
-        // removeUser.photo='',
-        // removeUser.admin=false
         setUser({})
         sessionStorage.removeItem('user')
         sessionStorage.removeItem('admin')

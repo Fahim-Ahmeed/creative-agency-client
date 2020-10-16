@@ -12,7 +12,7 @@ const Review = () => {
     const onSubmit = data => {
         const image=user.photo;
         const totalData={...data,image}
-        fetch("http://localhost:5000/addfeedback", {
+        fetch("https://protected-stream-26581.herokuapp.com/addfeedback", {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(totalData)
