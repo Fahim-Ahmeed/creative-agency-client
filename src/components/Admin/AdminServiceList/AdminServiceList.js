@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import SideNav from '../../SharedComponents/SideNav/SideNav';
 import Topbar from '../../SharedComponents/TopNav/Topbar';
 import './AdminServiceList.css'
 
 const AdminServiceList = () => {
+    const[customers,setCustomers]=useState([])
+    const allCustomer=()=>{
+        fetch('http://localhost:5000/allcustomer')
+        .then(response => response.json())
+        .then(data =>{
+            if(data){
+                setCustomers(data)
+                console.log(customers)
+            }
+        })
+    }
+    useEffect(()=>{
+        allCustomer()
+    },[])
     return (
 
 <section className='ClientDashboard'>
@@ -25,9 +40,13 @@ const AdminServiceList = () => {
                     </thead>
                     <tbody>
                       {
-                          <tr>
-                              <td></td>
-                          </tr>
+                          customers.map(customer => <tr>
+                              <td>{customer.name}</td>
+                              <td>{customer.email}</td>
+                              <td>{customer.work}</td>
+                              <td>{customer.details}</td>
+                              <td>pending</td>
+                          </tr>)
                       }
                        
                     </tbody>

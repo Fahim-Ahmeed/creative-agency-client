@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../../images/logos/logo.png'
 import './SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faUserPlus, faHdd, faShoppingCart, faCommentDots } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faUserPlus, faHdd, faShoppingCart, faCommentDots,faSignInAlt} from '@fortawesome/free-solid-svg-icons'
 import { NavLink, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
@@ -11,6 +11,17 @@ const SideNav = () => {
     const [user, setUser] = useContext(UserContext)
 
     const history = useHistory()
+    const signOut=()=>{
+        // const removeUser={...user}
+        // removeUser.email='',
+        // removeUser.name='',
+        // removeUser.photo='',
+        // removeUser.admin=false
+        setUser({})
+        sessionStorage.removeItem('user')
+        history.push('/')
+        console.log('dhurbal')
+    }
     return (
         <aside className='col-md-2 sideNav text-center p-0'>
             <div className="container">
@@ -35,7 +46,7 @@ const SideNav = () => {
                                 </NavLink>
 
                                 <NavLink to='/addService'
-                                aboutProps={'Add Service'}
+                                    aboutProps={'Add Service'}
                                     activeStyle={{
                                         fontWeight: "bold",
                                         paddingBottom: '0px',
@@ -49,7 +60,7 @@ const SideNav = () => {
                                     </li>
                                 </NavLink >
                                 <NavLink to='/makeAdmin'
-                                aboutProps={'Make Admin'}
+                                    aboutProps={'Make Admin'}
                                     activeStyle={{
                                         fontWeight: "bold",
                                         paddingBottom: '0px',
@@ -61,13 +72,17 @@ const SideNav = () => {
                                         <FontAwesomeIcon className='mr-2' style={{ fontSize: '18px' }} icon={faUserPlus} /> <span>Make Admin</span>
                                     </li>
                                 </NavLink>
+                                <li className='mb-3'onClick={signOut} >
+                                    <FontAwesomeIcon className='mr-2'  style={{ fontSize: '18px' }} icon={faSignInAlt} /> <span>Sign out</span>
+                                </li>
+
 
 
                             </>
                             :
                             <>
                                 <NavLink to='/order'
-                                aboutProps={'Order'}
+                                    aboutProps={'Order'}
                                     activeStyle={{
                                         fontWeight: "bold",
                                         paddingBottom: '0px',
@@ -82,7 +97,7 @@ const SideNav = () => {
                                 </NavLink>
 
                                 <NavLink to='/clientServiceList'
-                                aboutProps={'Your Order'}
+                                    aboutProps={'Your Order'}
                                     activeStyle={{
                                         fontWeight: "bold",
                                         paddingBottom: '0px',
@@ -108,6 +123,9 @@ const SideNav = () => {
                                         <FontAwesomeIcon className='mr-2' style={{ fontSize: '18px' }} icon={faCommentDots} /> <span>Review</span>
                                     </li>
                                 </NavLink>
+                                <li className='mb-3'onClick={signOut} >
+                                    <FontAwesomeIcon className='mr-2'  style={{ fontSize: '18px' }} icon={faSignInAlt} /> <span>Sign out</span>
+                                </li>
 
                             </>
                     }

@@ -8,13 +8,17 @@ const MakeAdmin = () => {
     
     const { register, handleSubmit } = useForm()
     const onSubmit = data => {
-        // fetch('http://localhost:5000/addAdmin', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => console.log(result))
+        fetch('http://localhost:5000/makeAdmin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result){
+                    alert('one admin added successfully')
+                }
+            })
     }
     return (
 
@@ -27,7 +31,7 @@ const MakeAdmin = () => {
                         <div className="service-form p-4">
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <p className="m-0">Email</p>
-                                <input required ref={register} type="email" placeholder='jon@gmail.com' name="email" id="" className="form-control" />
+                                <input required ref={register} type="email" placeholder='name@gmail.com' name="email" id="" className="form-control" />
                                 <button className="btn btn-success ml-2 px-4">Submit</button>
                             </form>
                         </div>

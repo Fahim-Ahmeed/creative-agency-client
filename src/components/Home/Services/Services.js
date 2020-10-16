@@ -19,7 +19,8 @@ const Services = () => {
     const handleService=(service)=>{
         const serviceChoose={
             serviceName: service.name,
-            serviceDescription:service.description
+            serviceDescription:service.description,
+            sImage:service.image.img
         }
         setSelectservice(serviceChoose)
        history.push('/order')

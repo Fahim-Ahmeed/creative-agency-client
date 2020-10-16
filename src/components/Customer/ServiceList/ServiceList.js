@@ -30,6 +30,7 @@ const ServiceList = () => {
     useEffect(() => {
         yourOrder();
     }, [])
+    console.log(totalItem)
     return (
         <section className='ClientDashboard'>
         <div className='row'>

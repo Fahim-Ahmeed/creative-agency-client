@@ -10,15 +10,17 @@ import { ServiceContext, UserContext } from '../../../App';
 const Order = () => {
     const [user, setUser] = useContext(UserContext)
     const [selectService, setSelectservice] = useContext(ServiceContext)
+    console.log(selectService)
     const { register, handleSubmit } = useForm()
     const [file, setFile] = useState(null)
     const onSubmit = data => {
         const formData = new FormData()
-        formData.append('file', file)
+        formData.append('fileOne', file)
         formData.append('name', data.name)
         formData.append('email', data.email)
         formData.append('work', data.work)
         formData.append('details', data.details)
+        // formData.append('fileTwo', selectService.sImage)
         formData.append('price', data.price)
 
         fetch('http://localhost:5000/addCustomer', {
@@ -44,7 +46,7 @@ const Order = () => {
                                 <input required ref={register} placeholder='Your email address' defaultValue={user.email} className='form-control mb-3' type="email" name="email" id="" />
                                 <input required ref={register} placeholder='what service do you want?' defaultValue={selectService.serviceName} className='form-control mb-3' type="text" name="work" id="" />
                                 <textarea required ref={register} placeholder='Project Detail' defaultValue={selectService.serviceDescription} name="details" id="" cols="30" rows="10" className="form-control mb-3"></textarea>
-                                <input required ref={register} placeholder='Price' className='form-control mb-3 d-inline mr-4' type="number" name="price" id="" />
+                                <input  ref={register} placeholder='Price' className='form-control mb-3 d-inline mr-4' type="number" name="price" id="" />
                                 <p className='m-0'>Icon</p>
                                 <input onChange={e => setFile(e.target.files[0])} className='upload-file-inp' type="file" name="file" id="uploadImg" />
                                 <label htmlFor="uploadImg" className='upload-file-btn text-center'><FontAwesomeIcon icon={faCloudUploadAlt} /> Upload project file</label>
