@@ -59,6 +59,7 @@ const Login = () => {
     }
     if(user.email){
         sessionStorage.setItem('user', user.email)
+        sessionStorage.setItem('admin',user.admin)
         history.replace(from)
     }
    

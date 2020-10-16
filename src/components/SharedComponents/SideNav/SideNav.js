@@ -19,6 +19,7 @@ const SideNav = () => {
         // removeUser.admin=false
         setUser({})
         sessionStorage.removeItem('user')
+        sessionStorage.removeItem('admin')
         history.push('/')
         console.log('dhurbal')
     }

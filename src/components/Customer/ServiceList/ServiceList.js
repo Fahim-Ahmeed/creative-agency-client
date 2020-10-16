@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../../App';
 import SideNav from '../../SharedComponents/SideNav/SideNav';
 import Topbar from '../../SharedComponents/TopNav/Topbar';
+import loading from '../../../images/loading.gif';
 import './ServiceList.css'
 
 
@@ -39,21 +40,22 @@ const ServiceList = () => {
                 <Topbar></Topbar>
                 <div className='service-list-container p-5'>
                     <div className="row">
-                       {
-                           totalItem.map(item=>
+                        {
+                            totalItem.length===0?<img src={loading}className="img-fluid" alt=""/>:totalItem.map(item=>
                             
-                           <div className="col-md-6">
-                           <div className="order-card p-4 mb-5">
-                               <div className="order-top d-flex justify-content-between align-items-start">
-                                   <img width='74' src={`data:image/png;base64,${item.image.img}`} alt="" />
-                                   <button style={statusBtnStyles} className="btn">Pending</button>
-                               </div>
-                               <p className="order-title mt-3">{item.work}</p>
-                               <p style={{ color: 'rgba(0, 0, 0, 0.7)' }} className="text-secondary">{item.details}</p>
-                           </div>
-                       </div>
-                            )
-                       }
+                                <div className="col-md-6">
+                                <div className="order-card p-4 mb-5">
+                                    <div className="order-top d-flex justify-content-between align-items-start">
+                                        <img width='74' src={`data:image/png;base64,${item.image.img}`} alt="" />
+                                        <button style={statusBtnStyles} className="btn">Pending</button>
+                                    </div>
+                                    <p className="order-title mt-3">{item.work}</p>
+                                    <p style={{ color: 'rgba(0, 0, 0, 0.7)' }} className="text-secondary">{item.details}</p>
+                                </div>
+                            </div>
+                             )
+                        }
+                    
                     </div>
                 </div>
             </div>

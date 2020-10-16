@@ -3,6 +3,7 @@ import { useState } from 'react';
 import SideNav from '../../SharedComponents/SideNav/SideNav';
 import Topbar from '../../SharedComponents/TopNav/Topbar';
 import './AdminServiceList.css'
+import loading from '../../../images/loading.gif';
 
 const AdminServiceList = () => {
     const[customers,setCustomers]=useState([])
@@ -39,15 +40,15 @@ const AdminServiceList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                      {
-                          customers.map(customer => <tr>
-                              <td>{customer.name}</td>
-                              <td>{customer.email}</td>
-                              <td>{customer.work}</td>
-                              <td>{customer.details}</td>
-                              <td>pending</td>
-                          </tr>)
-                      }
+                        {
+                            customers.length===0?<img src={loading} alt=""/>:customers.map(customer => <tr>
+                                <td>{customer.name}</td>
+                                <td>{customer.email}</td>
+                                <td>{customer.work}</td>
+                                <td>{customer.details}</td>
+                                <td>pending</td>
+                            </tr>)
+                        }
                        
                     </tbody>
                 </table>
