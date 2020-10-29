@@ -22,3 +22,13 @@ An admin can control everything,when the product will be complete then admin can
 - client work status will updated dynamically
 - client can talk about their budget
 
+
+### technology:
+- React
+- React Router
+- MongoDB
+- Node
+- firebase authentiction
+- bootstrap
+
+
